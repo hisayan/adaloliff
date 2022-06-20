@@ -1,0 +1,12 @@
+{
+  "displayName": "liff",
+  "components": [
+    {
+      "name": "Liff",
+      "manifest": "./src/components/Liff/manifest.json"
+    }
+  ],
+  "author": "",
+  "description": "",
+  "logo": "./logo.png"
+}
