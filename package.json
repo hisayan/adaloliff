@@ -3,8 +3,8 @@
   "description": "adalo with liff",
   "version": "0.0.1",
   "main": "index.js",
-  "license": "UNLICENSED",
-  "author": "tomoyuki hisada",
+  "license": "MIT",
+  "author": "Tomoyuki Hisada",
   "scripts": {
     "start": "adalo dev",
     "login": "adalo login",
@@ -16,5 +16,8 @@
     "react-art": "^16.6.0",
     "react-dom": "^16.9.0",
     "react-native-web": "^0.9.5"
+  },
+  "dependencies": {
+    "@line/liff": "^2.20.2"
   }
 }

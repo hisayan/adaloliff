@@ -1,12 +1,12 @@
 {
-  "displayName": "liff",
+  "displayName": "Adaro with LIFF",
   "components": [
     {
       "name": "Liff",
       "manifest": "./src/components/Liff/manifest.json"
     }
   ],
-  "author": "",
-  "description": "",
+  "author": "Tomoyuki Hisada",
+  "description": "Adalo with LIFF",
   "logo": "./logo.png"
 }
