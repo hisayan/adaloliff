@@ -1,7 +1,7 @@
 {
   "name": "adaloliff",
   "description": "adalo with liff",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "license": "MIT",
   "author": "Tomoyuki Hisada",
