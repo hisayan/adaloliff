@@ -17,10 +17,10 @@ const Liff = (props) => {
     //   }
     // });
 
-    if (liffId && !liffInitialized && ! userId.value) {
+    if (liffId && !liffInitialized) {
       console.log({ liffId, userId, displayName });
       liff
-        .init({ liffId })
+        .init({ liffId, withLoginOnExternalBrowser: true })
         .then(() => {
           setLiffInitialized(true);
           const isLoggedIn = liff.isLoggedIn();
@@ -33,7 +33,6 @@ const Liff = (props) => {
                 if (profile.userId != userId.value) {
                   userId.onChange(profile.userId);
                   displayName.onChange(profile.displayName);
-                  liffInitialized.onChange(true);
                 }
                 // const name = profile.displayName
                 // const userId = profile.userId
