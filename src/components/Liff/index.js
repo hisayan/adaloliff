@@ -20,26 +20,28 @@ const Liff = (props) => {
     if (liffId && !liffInitialized) {
       console.log({ liffId, userId, displayName });
       liff
-        .init({ liffId, withLoginOnExternalBrowser: true })
+        .init({ liffId, withLoginOnExternalBrowser: !props.editor })
         .then(() => {
-          setLiffInitialized(true);
-          const isLoggedIn = liff.isLoggedIn();
-          console.log({isLoggedIn})
-          if (isLoggedIn) {
-            liff
-              .getProfile()
-              .then((profile) => {
-                console.log("profile", profile);
-                if (profile.userId != userId.value) {
-                  userId.onChange(profile.userId);
-                  displayName.onChange(profile.displayName);
-                }
-                // const name = profile.displayName
-                // const userId = profile.userId
-              })
-              .catch((err) => {
-                console.log("error2", err);
-              });
+          if (!liffInitialized) {
+            setLiffInitialized(true);
+            const isLoggedIn = liff.isLoggedIn();
+            console.log({ isLoggedIn });
+            if (isLoggedIn) {
+              liff
+                .getProfile()
+                .then((profile) => {
+                  console.log("profile", profile);
+                  if (profile.userId != userId.value) {
+                    userId.onChange(profile.userId);
+                    displayName.onChange(profile.displayName);
+                  }
+                  // const name = profile.displayName
+                  // const userId = profile.userId
+                })
+                .catch((err) => {
+                  console.log("error2", err);
+                });
+            }
           }
         })
         .catch((err) => {
@@ -50,7 +52,9 @@ const Liff = (props) => {
 
   return (
     <View style={styles.wrapper}>
-      <Text style={{ color: "green", display: props.editor ? "unset" : "none" }}>
+      <Text
+        style={{ color: "green", display: props.editor ? "unset" : "none" }}
+      >
         {liffId}
       </Text>
     </View>
